@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) intl \
     && docker-php-ext-install -j$(nproc) zip \
     && docker-php-ext-install -j$(nproc) mysqli \
+    && docker-php-ext-install -j$(nproc) pdo_mysql \
+    && docker-php-ext-enable pdo_mysql \
     && docker-php-ext-install -j$(nproc) exif \
     && docker-php-ext-configure gd \
         --with-freetype=/usr/include/ \
